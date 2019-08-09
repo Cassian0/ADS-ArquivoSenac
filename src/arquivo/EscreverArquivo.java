@@ -17,12 +17,16 @@ import javax.swing.JOptionPane;
  */
 public class EscreverArquivo {
 
-    private static final String PATH = "C:\\Users\\cassiano.schmitz\\Desktop\\exemploJava\\Arquivo.txt";
+    private static String path;
+
+    public EscreverArquivo(String caminho) {
+        path = caminho;
+    }
 
     public void escrever(String texto) throws IOException {
-        LerArquivo ler = new LerArquivo();
+        LerArquivo ler = new LerArquivo(path);
         String textoArquivo = ler.lerTexto();
-        File file = new File(PATH);
+        File file = new File(path);
         BufferedWriter writer = new BufferedWriter(new FileWriter(file));
 
         writer.write(textoArquivo + "\n" + texto);
@@ -30,13 +34,6 @@ public class EscreverArquivo {
         writer.flush();
         writer.close();
 
-        System.out.println("Arquivo gravado em: " + PATH);
+        System.out.println("Arquivo gravado em: " + path);
     }
-
-    public static void main(String[] args) throws IOException {
-        EscreverArquivo ea = new EscreverArquivo();
-        ea.escrever(JOptionPane.
-                showInputDialog("Digite umn texto"));
-    }
-
 }

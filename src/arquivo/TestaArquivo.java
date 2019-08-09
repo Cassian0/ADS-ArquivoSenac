@@ -15,8 +15,8 @@ import javax.swing.JOptionPane;
 public class TestaArquivo {
 
     public static void main(String[] args) throws IOException {
-        LerArquivo lerArquivo = new LerArquivo();
-        EscreverArquivo escreverArquivo = new EscreverArquivo();
+        LerArquivo lerArquivo = new LerArquivo("");
+        EscreverArquivo escreverArquivo = new EscreverArquivo("C:\\Users\\cassiano.schmitz\\Desktop\\exemploJava\\Arquivo.txt");
         String menu;
         do {
             menu = JOptionPane.
